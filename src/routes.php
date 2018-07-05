@@ -26,3 +26,27 @@ $app->post('/verify', function(Request $request, Response $response, array $args
 
     return $newResponse;
 });
+
+$app->get('/groups', function(Request $request, Response $response, array $args) {
+    $data = array('error' => false, 'result' => [
+        [
+            'id'    => 1,
+            'name'  => 'Morbærhavens netværksgruppe'
+        ],
+        [
+            'id'    => 2,
+            'name'  => 'Morbærhavens Gamer-gruppe'
+        ],
+        [
+            'id'    => 3,
+            'name'  => 'Den våde høne'
+        ],
+        [
+            'id'    => 4,
+            'name'  => 'Kreagruppen'
+        ]
+    ]);
+    $newResponse = $response->withJson($data);
+
+    return $newResponse;
+});
